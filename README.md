@@ -27,8 +27,7 @@ The **Labor Management System** provides the following functionalities:
 
 - **Backend:** Python, Flask  
 - **Frontend:** HTML, CSS
-- **Database:** MySQL  
-- **Python Packages:** `flask`, `mysql-connector-python`  
+- **Database:** MySQL    
 
 ---
 
@@ -58,8 +57,6 @@ Windows
 ```bash
 my_venv\Scripts\activate
 ```
-
----
 
 4. **Install required Python packages inside the virtual environment**
 ```bash
