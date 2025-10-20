@@ -36,10 +36,34 @@ The **Labor Management System** provides the following functionalities:
 
 1. **Python** installed (3.8 or higher recommended)  
 2. **MySQL** installed and running  
-3. **Required Python packages**
+
+---
+## Virtual Environment Setup (Recommended)
+
+It is recommended to use a virtual environment to keep dependencies isolated:
+
+1. **Navigate to your project folder**
 
 ```bash
-pip install flask mysql-connector-python
+cd path\to\labor-management-project
+```
+
+2. **Create a virtual environment**
+```bash
+python -m venv my_venv
+```
+
+3. **Activate the virtual environment**
+Windows
+```bash
+my_venv\Scripts\activate
+```
+
+---
+
+4. **Install required Python packages inside the virtual environment**
+```bash
+pip install -r requirements.txt
 ```
 
 ---
@@ -65,6 +89,11 @@ cd labor-management-project
 2. **Open Command Prompt as Administrator (Windows only)**
 
 3. **Run the project**
+- Activate the virtual environment
+Windows
+```bash
+my_venv\Scripts\activate
+```
 ```bash
 python run_flask_with_mysql.py
 ```
