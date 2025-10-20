@@ -6,7 +6,7 @@ import sys
 
 # ---------- CONFIG ----------
 MYSQL_SERVICE_NAME = "MySQL80"  # change if your service name is different
-FLASK_APP_PATH = r"D:\CDAC\Python\labour-management-system\app.py"  # path to your Flask app
+FLASK_APP_PATH = r"D:\CDAC\Python\labour-management-system\app.py"  # replace with path to your Flask app
 FLASK_PORT = 5000
 
 # ---------- START MYSQL ----------
@@ -34,3 +34,4 @@ print("Stopping MySQL service...")
 os.system(f'net stop {MYSQL_SERVICE_NAME}')
 
 print("All done. MySQL stopped, Flask terminated.")
+
