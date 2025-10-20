@@ -80,7 +80,7 @@ pip install -r requirements.txt
 1. **Clone the repository**
 ```bash
 git clone https://github.com/afrah1510/labour-management-project.git
-cd labor-management-project
+cd labour-management-project
 ```
 
 2. **Open Command Prompt as Administrator (Windows only)**
