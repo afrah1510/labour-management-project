@@ -89,13 +89,8 @@ cd labour-management-project
   MYSQL_USER = "root"          # replace with your MySQL username
   MYSQL_PASSWORD = "12345"     # replace with your MySQL password
   ```
-- Open run_flask_with_mysql.py and replace
-  ```bash
-  MYSQL_SERVICE_NAME = "MySQL80"                                           # change if your service name is different
-  FLASK_APP_PATH = r"D:\CDAC\Python\labour-management-system\app.py"       # replace with path to your Flask app
-  ```
 
-3. **Open Command Prompt as Administrator (Windows only)**
+3. **Open Command Prompt**
 
 4. **Activate the virtual environment**
 Windows
@@ -105,7 +100,7 @@ my_venv\Scripts\activate
 
 5. **Run the project**
 ```bash
-python run_flask_with_mysql.py
+python app.py
 ```
-> This script automatically starts the MySQL server and launches the Flask app.
+> This script launches the Flask app.
 > Access the app at http://localhost:5000
