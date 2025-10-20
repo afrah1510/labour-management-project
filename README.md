@@ -1,4 +1,4 @@
-# Labor Management System
+# Labour Management System
 
 A web-based application to efficiently manage labor, attendance, tasks, and payments. Ideal for small and medium-sized organizations to simplify workforce management.  
 
