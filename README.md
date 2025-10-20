@@ -1,6 +1,6 @@
 # Labour Management System
 
-A web-based application to efficiently manage labour, attendance, tasks, and payments. Ideal for small and medium-sized organizations to simplify workforce management.  
+LabourX is a web-based platform that connects employers and daily-wage workers efficiently. Built using Flask and MySQL, it helps manage labour requests, worker profiles, and assignments — bridging the gap between labour demand and supply.  
 
 ---
 
