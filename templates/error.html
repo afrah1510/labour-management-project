@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error | LabourX</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/error.css') }}">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <h2>Labour<span>X</span></h2>
+    </div>
+    <div class="user-actions">
+      <a href="{{ url_for('home') }}" class="btn primary">Home</a>
+    </div>
+  </header>
+
+  <!-- Error Content -->
+  <main class="error-container">
+    <div class="error-box">
+      <h1>Oops!</h1>
+      <h2>{{ message or "Something went wrong." }}</h2>
+      <p>Please check the details and try again.</p>
+      <a href="{{ url_for('home') }}" class="btn primary">Back to Home</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 LabourX. All rights reserved.
+  </footer>
+
+</body>
+</html>

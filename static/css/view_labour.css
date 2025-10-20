@@ -1,0 +1,97 @@
+:root {
+    --text-color: #F9FAFB;
+    --header-bg: #1F2937;       /* dark header background */
+    --primary-color: #1E40AF;   /* keep blue for buttons/table header */
+    --accent-color: #1E90FF;
+    --highlight-color: #3B82F6;
+    --table-header-bg: #3498db;
+    --table-border: #374151;
+    --container-bg: #1F2937;
+    --table-row-even: #1F2937;
+    --table-row-hover: #374151;
+}
+
+/* Header */
+.header {
+    background-color: var(--header-bg); /* Use dark color for header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--container-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th {
+    background-color: var(--table-header-bg);
+    color: #fff;
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid var(--table-border);
+}
+
+table td {
+    background-color: var(--table-row-even);
+    padding: 12px 15px;
+    color: var(--text-color);
+    border: 1px solid var(--table-border);
+}
+
+table tr:hover {
+    background-color: var(--table-row-hover);
+    transition: 0.3s;
+}
+
+/* Buttons */
+button.btn.primary {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button.btn.primary:hover {
+    background-color: var(--highlight-color);
+    transform: translateY(-2px);
+}
+
+/* Error */
+.error {
+    margin-top: 20px;
+    color: #f87171;
+    text-align: center;
+    font-weight: bold;
+}

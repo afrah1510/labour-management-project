@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Project | LabourX</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_project.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <h2>Labour<span>X</span></h2>
+        </div>
+        <div class="user-actions">
+            <a href="{{ url_for('home') }}" class="btn primary">Home</a>
+            <a href="{{ url_for('view_project') }}" class="btn primary">View Project</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Add New Project</h2>
+        <form method="POST" action="{{ url_for('add_project') }}">
+            <label for="name">Project Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter project name" required>
+
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="Enter project location">
+
+            <label for="start_date">Start Date</label>
+            <input type="date" id="start_date" name="start_date" required>
+
+            <label for="end_date">End Date</label>
+            <input type="date" id="end_date" name="end_date">
+
+            <label for="status">Status</label>
+            <select id="status" name="status">
+                <option value="Ongoing" selected>Ongoing</option>
+                <option value="Complete">Complete</option>
+            </select>
+
+            <button type="submit" class="btn primary">Add Project</button>
+        </form>
+    </div>
+
+</body>
+</html>

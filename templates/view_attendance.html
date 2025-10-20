@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Attendance | LabourX</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/view_attendance.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <h2>Labour<span>X</span></h2>
+        </div>
+        <div class="user-actions">
+            <a href="{{ url_for('home') }}" class="btn primary">Home</a>
+            <a href="{{ url_for('mark_attendance') }}" class="btn primary">Mark Attendance</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Attendance Records</h2>
+
+        <!-- Search Form -->
+        <form method="POST" action="{{ url_for('view_attendance') }}" class="search-form">
+            <label for="labour_id">Enter Labour ID</label>
+            <div class="input-group">
+                <input type="number" id="labour_id" name="labour_id" placeholder="Labour ID">
+                <button type="submit" class="btn primary">Search</button>
+            </div>
+        </form>
+
+        <!-- Attendance Table -->
+        {% if attendances %}
+            <table class="attendance-table">
+                <thead>
+                    <tr>
+                        <th>Attendance ID</th>
+                        <th>Labour Name</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for att in attendances %}
+                    <tr>
+                        <td>{{ att.attendance_id }}</td>
+                        <td>{{ att.labour_name }}</td>
+                        <td>{{ att.date }}</td>
+                        <td>{{ att.status }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% elif searched %}
+            <p class="error">No attendance found for the given ID.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>

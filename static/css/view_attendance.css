@@ -1,0 +1,114 @@
+:root {
+    --text-color: #F9FAFB;
+    --header-bg: #1F2937;       /* dark header background */
+    --primary-color: #1E40AF;   /* blue for table headers / accent */
+    --accent-color: #1E90FF;    /* button color */
+    --highlight-color: #3B82F6; /* button hover */
+    --table-header-bg: #3498db; /* blue table header */
+    --table-border: #374151;
+    --container-bg: #1F2937;
+    --table-row-even: #1F2937;
+    --table-row-hover: #374151;
+}
+
+/* Header */
+.header {
+    background-color: var(--header-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--container-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+/* Search Form */
+.search-form .input-group {
+    margin-top: 5px;
+}
+
+/* Make input full width */
+.search-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--table-border);
+    background-color: #111827;
+    color: var(--text-color);
+    margin-bottom: 10px; /* spacing before button */
+}
+
+/* Button on next line */
+.search-form button {
+    width: 100%;   /* full width, below input */
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: var(--highlight-color);
+    transform: translateY(-2px);
+}
+
+/* Attendance Table */
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.attendance-table th, .attendance-table td {
+    padding: 12px;
+    border: 1px solid var(--table-border);
+    color: var(--text-color);
+}
+
+.attendance-table th {
+    background-color: var(--table-header-bg);
+    font-weight: bold;
+    text-align: center;
+}
+
+.attendance-table td {
+    background-color: var(--table-row-even);
+    text-align: center;
+}
+
+.attendance-table tr:hover {
+    background-color: var(--table-row-hover);
+    transition: 0.3s;
+}
+
+/* Error message */
+.error {
+    margin-top: 20px;
+    text-align: center;
+    color: #f87171;
+    font-weight: bold;
+}

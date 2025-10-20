@@ -1,0 +1,106 @@
+.header {
+    display: flex;
+    justify-content: space-between; /* pushes first child left, second right */
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Dashboard Page Specific Styles - Dark Mode */
+
+.dashboard {
+    max-width: 1000px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.dashboard h1 {
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.dashboard-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Rounded, interactive buttons */
+.dashboard-options .btn.primary {
+    padding: 18px 28px;
+    font-size: 16px;
+    border-radius: 20px; /* more rounded */
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* subtle shadow */
+}
+
+/* Hover effect */
+.dashboard-options .btn.primary:hover {
+    background-color: var(--highlight-color);
+    transform: translateY(-3px); /* subtle lift effect */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Active / pressed effect */
+.dashboard-options .btn.primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Outline buttons (if needed) */
+.dashboard-options .btn.outline {
+    background-color: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.dashboard-options .btn.outline:hover {
+    background-color: var(--text-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Dashboard Image Tiles */
+.dashboard-options .dashboard-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 150px;
+}
+
+.dashboard-options .dashboard-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-options .dashboard-item span {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Hover effects */
+.dashboard-options .dashboard-item:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.dashboard-options .dashboard-item:hover span {
+    color: var(--highlight-color);
+}

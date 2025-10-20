@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Labour | LabourX</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/view_labour.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <h2>Labour<span>X</span></h2>
+        </div>
+        <div class="user-actions">
+            <a href="{{ url_for('home') }}" class="btn primary">Home</a>
+            <a href="{{ url_for('register_labour') }}" class="btn primary">Register Labour</a>
+        </div>
+    </header>
+
+    <!-- Container -->
+    <div class="container">
+        <h2>View Labour Details</h2>
+        <form method="POST" action="{{ url_for('view_labour') }}">
+            <label for="labour_id">Enter Labour ID</label>
+            <input type="number" id="labour_id" name="labour_id" placeholder="Labour ID">
+            <button type="submit" class="btn primary">Search</button>
+        </form>
+        
+        {% if labours %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Labour ID</th><th>Name</th><th>Age</th><th>Gender</th><th>Contact</th><th>Address</th><th>Skill</th><th>Joining Date</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for labour in labours %}
+                <tr>
+                    <td>{{ labour.labour_id }}</td>
+                    <td>{{ labour.name }}</td>
+                    <td>{{ labour.age }}</td>
+                    <td>{{ labour.gender }}</td>
+                    <td>{{ labour.contact }}</td>
+                    <td>{{ labour.address }}</td>
+                    <td>{{ labour.skill }}</td>
+                    <td>{{ labour.join_date }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% elif searched %}
+        <p class="error">No labour found with the given ID.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>

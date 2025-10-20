@@ -1,0 +1,80 @@
+.header {
+    display: flex;
+    justify-content: space-between; /* pushes first child left, second right */
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #1F2937; /* dark card */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+/* Form Labels */
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* Form Inputs */
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    background-color: #111827;
+    color: var(--text-color);
+}
+
+/* Submit Button */
+.btn.primary {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn.primary:hover {
+    background-color: var(--highlight-color);
+    transform: translateY(-2px);
+}
+
+/* Outline buttons in header */
+.btn.outline {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 12px;
+    padding: 8px 16px;
+    transition: 0.3s;
+}
+
+.btn.outline:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    transform: translateY(-2px);
+}

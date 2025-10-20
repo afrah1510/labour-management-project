@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Wages | LabourX</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/view_wages.css') }}">
+</head>
+<body>
+    <div class="main-content">
+        <header class="header">
+            <div class="logo">
+                <h2>Labour<span>X</span></h2>
+            </div>
+            <div class="user-actions">
+                <a href="{{ url_for('home') }}" class="btn primary">Home</a>
+                <a href="{{ url_for('add_wages') }}" class="btn primary">Add Wages</a>
+            </div>
+        </header>
+
+        <div class="content">
+            <h2>All Wages</h2>
+
+            <form class="search-form" action="/search_wages" method="GET">
+                <label for="search">Enter Labour ID</label>
+                <div class="input-group">
+                    <input type="text" name="labour_id" placeholder="Enter Labour ID" required>
+                </div>
+                <button type="submit" class="btn primary">Search</button>
+            </form>
+
+
+            {% if wages %}
+            <table class="wages-table">
+                <thead>
+                    <tr>
+                        <th>Wage ID</th>
+                        <th>Labour Name</th>
+                        <th>Amount</th>
+                        <th>Payment Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for wage in wages %}
+                    <tr>
+                        <td>{{ wage.wage_id }}</td>
+                        <td>{{ wage.labour_name }}</td>
+                        <td>{{ wage.amount }}</td>
+                        <td>{{ wage.payment_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+                <p class="error">No wages recorded yet.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

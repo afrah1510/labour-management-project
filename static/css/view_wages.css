@@ -1,0 +1,132 @@
+:root {
+    --text-color: #F9FAFB;
+    --header-bg: #1F2937;       /* dark header background */
+    --primary-color: #1E40AF;   /* blue for table headers / accent */
+    --accent-color: #1E90FF;    /* button color */
+    --highlight-color: #3B82F6; /* button hover */
+    --table-header-bg: #3498db; /* blue table header */
+    --table-border: #374151;    /* consistent border */
+    --container-bg: #1F2937;    /* match other pages */
+    --table-row-even: #1F2937;  /* table body matches container */
+    --table-row-hover: #374151; /* table row hover */
+}
+
+/* Header */
+.header {
+    background-color: var(--header-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+/* Container / Content */
+.content {
+    background-color: var(--container-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+/* Search form label and input alignment */
+.search-form {
+    margin-bottom: 20px;
+    text-align: left; /* aligns label and button to the left */
+}
+
+.search-form label {
+    display: block;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    text-align: left; /* ensures label is left */
+}
+
+.search-form .input-group {
+    display: flex;
+    flex-direction: column; /* input stacked */
+    gap: 10px;
+    margin-top: 0;
+    align-items: flex-start; /* left align input and button */
+}
+
+.search-form input {
+    width: 100%; /* keeps input full width */
+}
+
+.search-form button {
+    margin-top: 10px;
+    width: auto; /* button fits content, aligns left */
+}
+
+/* Table */
+.wages-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.wages-table th, .wages-table td {
+    padding: 12px 15px;
+    border: 1px solid var(--table-border); /* full borders like other pages */
+    text-align: center;
+    color: var(--text-color);
+}
+
+.wages-table th {
+    background-color: var(--table-header-bg);
+    color: #fff;
+    font-weight: bold;
+}
+
+.wages-table td {
+    background-color: var(--table-row-even); /* match container */
+}
+
+.wages-table tr:nth-child(even) {
+    background-color: var(--table-row-even); /* keep even rows same as container */
+}
+
+.wages-table tr:hover {
+    background-color: var(--table-row-hover);
+    transition: 0.3s;
+}
+
+/* Buttons */
+button.btn.primary {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button.btn.primary:hover {
+    background-color: var(--highlight-color);
+    transform: translateY(-2px);
+}
+
+/* Error message */
+.error {
+    margin-top: 20px;
+    color: #e74c3c;
+    text-align: center;
+    font-weight: bold;
+}

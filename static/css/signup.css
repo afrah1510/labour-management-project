@@ -1,0 +1,73 @@
+/* =============================== */
+/* SIGNUP PAGE SPECIFIC STYLES - DARK MODE */
+/* =============================== */
+
+.header {
+    display: flex;
+    justify-content: space-between; /* pushes first child left, second right */
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.content {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30px 40px;
+    background-color: #1F2937; /* Dark card */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.content h1 {
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.signup-form label {
+    font-weight: 600;
+    text-align: left;
+    color: var(--text-muted);
+}
+
+.signup-form input {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #374151;
+    background-color: #111827;
+    color: var(--text-color);
+}
+
+.signup-form input::placeholder {
+    color: #9CA3AF;
+}
+
+.signup-form button.btn.primary {
+    padding: 10px;
+    font-weight: 600;
+}
+
+.login-link {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: var(--text-muted);
+}
+
+.login-link a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    color: var(--highlight-color);
+    text-decoration: underline;
+}

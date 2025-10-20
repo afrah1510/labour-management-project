@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Attendance | LabourX</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mark_attendance.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <h2>Labour<span>X</span></h2>
+        </div>
+        <div class="user-actions">
+            <a href="{{ url_for('home') }}" class="btn primary">Home</a>
+            <a href="{{ url_for('view_attendance') }}" class="btn primary">View Attendance</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Mark Attendance</h2>
+        <form action="{{ url_for('mark_attendance') }}" method="POST">
+            <label for="labour_id">Labour ID</label>
+            <input type="number" id="labour_id" name="labour_id" placeholder="Enter labour ID" required>
+
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="status">Attendance Status</label>
+            <select id="status" name="status" required>
+                <option value="">Select status</option>
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+
+            <button type="submit" class="btn primary">Submit Attendance</button>
+        </form>
+    </div>
+
+</body>
+</html>

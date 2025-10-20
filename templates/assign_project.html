@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Project | LabourX</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/assign_project.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <h2>Labour<span>X</span></h2>
+        </div>
+        <div class="user-actions">
+            <a href="{{ url_for('home') }}" class="btn primary">Home</a>
+            <a href="{{ url_for('add_project') }}" class="btn primary">Add Project</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Assign Labour to Project</h1>
+        <form action="{{ url_for('assign_project') }}" method="POST" class="assign-form">
+            <label for="labour_id">Select Labour:</label>
+            <select name="labour_id" id="labour_id" required>
+                <option value="">-- Select Labour --</option>
+                {% for labour in labours %}
+                <option value="{{ labour.labour_id }}">{{ labour.name }} (ID: {{ labour.labour_id }})</option>
+                {% endfor %}
+            </select>
+
+            <label for="project_id">Select Project:</label>
+            <select name="project_id" id="project_id" required>
+                <option value="">-- Select Project --</option>
+                {% for project in projects %}
+                <option value="{{ project.project_id }}">{{ project.name }} (ID: {{ project.project_id }})</option>
+                {% endfor %}
+            </select>
+
+            <label for="assigned_date">Assigned Date:</label>
+            <input type="date" name="assigned_date" id="assigned_date">
+
+            <button type="submit" class="btn primary">Assign</button>
+        </form>
+
+        <h2>Current Assignments</h2>
+        <table class="assignment-table">
+            <thead>
+                <tr>
+                    <th>Assignment ID</th>
+                    <th>Labour</th>
+                    <th>Project</th>
+                    <th>Assigned Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for assignment in assignments %}
+                <tr>
+                    <td>{{ assignment.assignment_id }}</td>
+                    <td>{{ assignment.labour_name }}</td>
+                    <td>{{ assignment.project_name }}</td>
+                    <td>{{ assignment.assigned_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

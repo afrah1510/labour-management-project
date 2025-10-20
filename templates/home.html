@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | LabourX</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <h2>Labour<span>X</span></h2>
+        </div>
+        <div class="user-actions">
+            <span>Welcome, {{ session.username }}</span>
+            <a href="{{ url_for('logout') }}" class="btn primary">Logout</a>
+        </div>
+    </header>
+
+    <!-- Dashboard Content -->
+    <div class="content dashboard">
+        <h1>Admin Dashboard</h1>
+        <div class="dashboard-options">
+
+            <a href="{{ url_for('register_labour') }}" class="dashboard-item">
+                <img src="{{ url_for('static', filename='images/register_labour.jpg') }}" alt="Register Labour">
+                <span>Register Labour</span>
+            </a>
+
+            <a href="{{ url_for('view_labour') }}" class="dashboard-item">
+                <img src="{{ url_for('static', filename='images/view_labour.jpg') }}" alt="View Labour">
+                <span>View Labour</span>
+            </a>
+        
+            <a href="{{ url_for('assign_project') }}" class="dashboard-item">
+                <img src="{{ url_for('static', filename='images/assign_project.jpg') }}" alt="Assign Project">
+                <span>Assign Project</span>
+            </a>
+    
+            <a href="{{ url_for('add_project') }}" class="dashboard-item">
+                <img src="{{ url_for('static', filename='images/add_project.jpg') }}" alt="Add Project">
+                <span>Add Project</span>
+            </a>
+
+            <a href="{{ url_for('view_project') }}" class="dashboard-item">
+                <img src="{{ url_for('static', filename='images/view_project.jpg') }}" alt="View Project">
+                <span>View Project</span>
+            </a>
+
+            <a href="{{ url_for('mark_attendance') }}" class="dashboard-item">
+                <img src="{{ url_for('static', filename='images/mark_attendance.jpg') }}" alt="Mark Attendance">
+                <span>Mark Attendance</span>
+            </a>
+
+            <a href="{{ url_for('view_attendance') }}" class="dashboard-item">
+                <img src="{{ url_for('static', filename='images/view_attendance.jpg') }}" alt="View Attendance">
+                <span>View Attendance</span>
+            </a>
+
+            <a href="{{ url_for('add_wages') }}" class="dashboard-item">
+                <img src="{{ url_for('static', filename='images/add_wages.png') }}" alt="Add Wages">
+                <span>Add Wages</span>
+            </a>
+
+            <a href="{{ url_for('view_wages') }}" class="dashboard-item">
+                <img src="{{ url_for('static', filename='images/view_wages.jpg') }}" alt="View Wages">
+                <span>View Wages</span>
+            </a>
+
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | LabourX</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <h2>Labour<span>X</span></h2>
+        </div>
+        <div class="user-actions">
+            <a href="{{ url_for('login') }}" class="btn primary">Login</a>
+            <a href="{{ url_for('signup') }}" class="btn primary">Signup</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <!-- Image on the left -->
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='images/index-image.jpg') }}" alt="LabourX">
+        </div>
+
+        <!-- Content on the right -->
+        <div class="hero-content">
+            <h1>Welcome to LabourX</h1>
+            <p>Manage labour efficiently with LabourX – track attendance, assign projects, and calculate wages with ease.</p>
+            <a href="{{ url_for('signup') }}" class="btn primary large">Get Started</a>
+        </div>
+    </section>
+
+</body>
+</html>

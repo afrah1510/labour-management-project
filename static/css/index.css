@@ -1,0 +1,79 @@
+/* =============================== */
+/* SLEEK DARK MODE - INDEX PAGE */
+/* =============================== */
+.header {
+    display: flex;
+    justify-content: space-between; /* pushes first child left, second right */
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: row; /* ensures horizontal layout */
+    height: 100vh;       /* full viewport height */
+    width: 100%;
+    background-color: #1F2937;
+}
+
+.hero-image {
+    flex: 1;             /* left half */
+    height: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* fill left half without distortion */
+    display: block;
+}
+
+.hero-content {
+    flex: 1;             /* right half */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertically center content */
+    padding: 50px;
+    color: #F9FAFB;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-content .btn.large {
+    padding: 14px 28px;
+    font-size: 18px;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column; /* stack vertically on small screens */
+        height: auto;
+    }
+
+    .hero-image, .hero-content {
+        flex: none;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
