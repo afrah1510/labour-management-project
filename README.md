@@ -40,6 +40,7 @@ The **Labor Management System** provides the following functionalities:
 
 ```bash
 pip install flask mysql-connector-python
+```
 
 ---
 
@@ -56,14 +57,16 @@ pip install flask mysql-connector-python
 # Installation & Running the Project
 
 1. **Clone the repository**
+```bash
 git clone https://github.com/afrah1510/labour-management-project.git
 cd labor-management-project
+```
 
 2. **Open Command Prompt as Administrator (Windows only)**
 
 3. **Run the project**
 ```bash
 python run_flask_with_mysql.py
-
+```
 > This script automatically starts the MySQL server and launches the Flask app.
 > Access the app at http://localhost:5000
