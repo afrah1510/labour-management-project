@@ -83,15 +83,7 @@ git clone https://github.com/afrah1510/labour-management-project.git
 cd labour-management-project
 ```
 
-2. **Open Command Prompt as Administrator (Windows only)**
-
-3. **Activate the virtual environment**
-Windows
-```bash
-my_venv\Scripts\activate
-```
-
-4. **Update configuration files**
+2. **Update configuration files**
 - Open config.py and replace
   ```bash
   MYSQL_USER = "root"          # replace with your MySQL username
@@ -102,6 +94,14 @@ my_venv\Scripts\activate
   MYSQL_SERVICE_NAME = "MySQL80"                                           # change if your service name is different
   FLASK_APP_PATH = r"D:\CDAC\Python\labour-management-system\app.py"       # replace with path to your Flask app
   ```
+
+3. **Open Command Prompt as Administrator (Windows only)**
+
+4. **Activate the virtual environment**
+Windows
+```bash
+my_venv\Scripts\activate
+```
 
 5. **Run the project**
 ```bash
