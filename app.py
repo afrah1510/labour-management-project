@@ -171,20 +171,10 @@ def add_project():
     return render_template("add_project.html")
 
 
-@app.route("/view_project")
+@app.route("/view_project", methods=["GET"])
 @login_required
 def view_project():
-    try:
-        cursor.execute("SELECT * FROM project")
-        projects = cursor.fetchall()
-    except Error as e:
-        return render_template("error.html", message="Error viewing projects: " + str(e))
-    return render_template("view_project.html", projects=projects)
-
-@app.route("/search_project")
-@login_required
-def search_project():
-    project_id = request.args.get("project_id")  # get value from search form
+    project_id = request.args.get("project_id")  # from search form
 
     try:
         if project_id:
@@ -193,13 +183,12 @@ def search_project():
         else:
             sql = "SELECT * FROM project"
             cursor.execute(sql)
-
         projects = cursor.fetchall()
-
     except Error as e:
-        return render_template("error.html", message="Error searching projects: " + str(e))
+        return render_template("error.html", message="Error loading projects: " + str(e))
 
     return render_template("view_project.html", projects=projects)
+
 
 # ===================== ASSIGN PROJECT =====================
 @app.route("/assign_project", methods=["GET", "POST"])
@@ -316,29 +305,13 @@ def add_wages():
     return render_template("add_wages.html", labours=labours)
 
 
-@app.route("/view_wages")
+@app.route("/view_wages", methods=["GET"])
 @login_required
 def view_wages():
-    try:
-        cursor.execute("""
-            SELECT w.wage_id, l.name AS labour_name, w.amount, w.payment_date
-            FROM wages w
-            JOIN labour l ON w.labour_id = l.labour_id
-        """)
-        wages = cursor.fetchall()
-    except Error as e:
-        return render_template("error.html", message="Error loading wages: " + str(e))
-    return render_template("view_wages.html", wages=wages)
-
-
-@app.route("/search_wages", methods=["GET"])
-@login_required
-def search_wages():
-    labour_id = request.args.get("labour_id")  # get input from search form
+    labour_id = request.args.get("labour_id")
 
     try:
         if labour_id:
-            # Query wages for specific labour_id
             cursor.execute("""
                 SELECT w.wage_id, l.name AS labour_name, w.amount, w.payment_date
                 FROM wages w
@@ -346,17 +319,14 @@ def search_wages():
                 WHERE w.labour_id = %s
             """, (labour_id,))
         else:
-            # If no labour_id, return all wages
             cursor.execute("""
                 SELECT w.wage_id, l.name AS labour_name, w.amount, w.payment_date
                 FROM wages w
                 JOIN labour l ON w.labour_id = l.labour_id
             """)
-
         wages = cursor.fetchall()
-
     except Error as e:
-        return render_template("error.html", message="Error searching wages: " + str(e))
+        return render_template("error.html", message="Error loading wages: " + str(e))
 
     return render_template("view_wages.html", wages=wages)
 
