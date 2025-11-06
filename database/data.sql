@@ -1,5 +1,5 @@
 INSERT INTO admin (username, password) VALUES 
-('admin1', 'password123'),
+('admin_staff', 'password123'),
 ('manager', 'manager2025');
 
 INSERT INTO labour (name, gender, age, contact, address, skill, join_date) VALUES
@@ -31,3 +31,4 @@ INSERT INTO wages (labour_id, amount, payment_date) VALUES
 (3, 2100.75, '2025-10-05'),
 (1, 2000.50, '2025-10-15');
 
+select * from admin;
