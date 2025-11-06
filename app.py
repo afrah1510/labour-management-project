@@ -155,7 +155,7 @@ def add_project():
             name = request.form.get("name")
             location = request.form.get("location")
             start_date = request.form.get("start_date")
-            end_date = request.form.get("end_date")
+            end_date = request.form.get("end_date") or None
             status = request.form.get("status", "Ongoing")
 
             cursor.execute(
