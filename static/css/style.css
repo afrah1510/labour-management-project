@@ -244,3 +244,13 @@ footer {
         margin: 20px auto;
     }
 }
+
+/* Calendar icon visible in dark mode */
+input[type="date"] {
+    color-scheme: light dark;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
