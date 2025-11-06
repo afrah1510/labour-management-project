@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Signup | Labour Management</title>
+    <title>Admin Signup | LabourX</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
 </head>
@@ -24,15 +24,39 @@
         <div class="content">
             <h1>Signup</h1>
             <form action="{{ url_for('signup') }}" method="POST" class="signup-form">
+
                 <label for="username">Username:</label>
-                <input type="text" name="username" id="username" maxlength="100" required placeholder="Enter username">
+                <input 
+                    type="text" 
+                    name="username" 
+                    id="username" 
+                    minlength="4" 
+                    maxlength="16" 
+                    required 
+                    placeholder="Enter username (4–16 characters)"
+                    pattern="^[A-Za-z0-9_]{4,16}$"
+                    title="Username must be 4–16 characters long and can include letters, numbers, or underscores."
+                >
 
                 <label for="password">Password:</label>
-                <input type="password" name="password" id="password" maxlength="16" required placeholder="Enter password">
+                <input 
+                    type="password" 
+                    name="password" 
+                    id="password" 
+                    minlength="8" 
+                    maxlength="20" 
+                    required 
+                    placeholder="Enter password (8–20 characters)"
+                    pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,20}$"
+                    title="Password must be 8–20 characters long and include at least one letter and one number."
+                >
 
                 <button type="submit" class="btn primary">Sign Up</button>
             </form>
-            <p class="login-link">Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+
+            <p class="login-link">Already have an account? 
+                <a href="{{ url_for('login') }}">Login here</a>
+            </p>
         </div>
     </div>
 </body>

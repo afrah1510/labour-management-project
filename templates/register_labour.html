@@ -24,12 +24,16 @@
     <div class="container">
         <h2>Register New Labour</h2>
         <form action="{{ url_for('register_labour') }}" method="POST">
+            
+            <!-- Full Name -->
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Enter full name" required>
 
+            <!-- Age -->
             <label for="age">Age</label>
-            <input type="number" id="age" name="age" placeholder="Enter age" required>
+            <input type="number" id="age" name="age" placeholder="Enter age" min="18" max="65" required>
 
+            <!-- Gender Dropdown -->
             <label for="gender">Gender</label>
             <select id="gender" name="gender" required>
                 <option value="">Select gender</option>
@@ -38,18 +42,32 @@
                 <option value="Other">Other</option>
             </select>
 
+            <!-- Contact Number -->
             <label for="contact">Contact Number</label>
-            <input type="text" id="contact" name="contact" placeholder="Enter contact number" required>
+            <input type="number" id="contact" name="contact" placeholder="Enter 10-15 digit contact number" pattern="[0-9]{10,15}" required>
 
+            <!-- Address -->
             <label for="address">Address</label>
             <textarea id="address" name="address" placeholder="Enter address" required></textarea>
 
-            <label for="skills">Skills / Job Type</label>
-            <input type="text" id="skill" name="skill" placeholder="Enter skills or job type" required>
+            <!-- Skill Dropdown -->
+            <label for="skill">Skill / Job Type</label>
+            <select id="skill" name="skill" required>
+                <option value="">Select skill</option>
+                <option value="Mason">Mason</option>
+                <option value="Carpenter">Carpenter</option>
+                <option value="Electrician">Electrician</option>
+                <option value="Plumber">Plumber</option>
+                <option value="Painter">Painter</option>
+                <option value="Helper">Helper</option>
+                <option value="Other">Other</option>
+            </select>
 
+            <!-- Joining Date -->
             <label for="joining_date">Joining Date</label>
-            <input type="date" id="joining_date" name="joining_date" required>
+            <input type="date" id="joining_date" name="joining_date">
 
+            <!-- Submit -->
             <button type="submit" class="btn primary">Register Labour</button>
         </form>
     </div>

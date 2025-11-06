@@ -20,27 +20,38 @@
         </div>
     </header>
 
+    <!-- Form Container -->
     <div class="container">
         <h2>Add New Project</h2>
         <form method="POST" action="{{ url_for('add_project') }}">
+            
+            <!-- Project Name -->
             <label for="name">Project Name</label>
             <input type="text" id="name" name="name" placeholder="Enter project name" required>
 
+            <!-- Location -->
             <label for="location">Location</label>
-            <input type="text" id="location" name="location" placeholder="Enter project location">
+            <input type="text" id="location" name="location" placeholder="Enter project location" required>
 
+            <!-- Start Date -->
             <label for="start_date">Start Date</label>
             <input type="date" id="start_date" name="start_date" required>
 
+            <!-- End Date -->
             <label for="end_date">End Date</label>
             <input type="date" id="end_date" name="end_date">
 
+            <!-- Project Status -->
             <label for="status">Status</label>
-            <select id="status" name="status">
+            <select id="status" name="status" required>
+                <option value="">Select Status</option>
                 <option value="Ongoing" selected>Ongoing</option>
+                <option value="On Hold">On Hold</option>
                 <option value="Complete">Complete</option>
+                <option value="Cancelled">Cancelled</option>
             </select>
 
+            <!-- Submit Button -->
             <button type="submit" class="btn primary">Add Project</button>
         </form>
     </div>

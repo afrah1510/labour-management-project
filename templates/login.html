@@ -3,34 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Labour Management</title>
+    <title>Login | LabourX</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
 <body>
     <div class="main-content">
-        <!-- Header with proper alignment -->
+        <!-- Header -->
         <header class="header">
             <div class="logo">
                 <h2>Labour<span>X</span></h2>
             </div>
         </header>
 
-        <!-- Login form content -->
+        <!-- Login Form -->
         <div class="content">
             <h2>Login</h2>
-            <form action="{{ url_for('login') }}" method="POST">
-                <label>Username</label>
-                <input type="text" name="username" required placeholder="Enter your username">
+            <form action="{{ url_for('login') }}" method="POST" class="login-form">
 
-                <label>Password</label>
-                <input type="password" name="password" required placeholder="Enter your password">
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    required 
+                    minlength="4" 
+                    maxlength="16"
+                    placeholder="Enter your username"
+                    pattern="^[A-Za-z0-9_]{4,16}$"
+                    title="Username must be 4–16 characters long and can include letters, numbers, or underscores."
+                >
+
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    required 
+                    minlength="8" 
+                    maxlength="20"
+                    placeholder="Enter your password"
+                    title="Password must be 8–20 characters long."
+                >
 
                 <button type="submit" class="btn primary">Login</button>
             </form>
 
-            <p>Forgot your password? <a href="{{ url_for('forgetpassword') }}">Click here</a></p>
-            <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign up</a></p>
+            <p class="links">
+                <a href="{{ url_for('forgetpassword') }}">Forgot your password?</a><br>
+                Don't have an account? <a href="{{ url_for('signup') }}">Sign up</a>
+            </p>
         </div>
     </div>
 </body>
